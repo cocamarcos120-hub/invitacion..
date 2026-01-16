@@ -1,0 +1,1639 @@
+/* Estilos generales - Diseño Militar Profesional */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Paleta de colores militar profesional */
+    --army-green: #36454F;
+    --olive-drab: #6B8E23;
+    --desert-tan: #C19A6B;
+    --khaki: #F0E68C;
+    --bronze: #CD7F32;
+    --steel-blue: #4682B4;
+    --gunmetal: #2C3539;
+    --ivory: #FFFFF0;
+    --shadow-black: #1A1A1A;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    color: var(--ivory);
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Textura de fondo sutil */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(54, 69, 79, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(107, 142, 35, 0.15) 0%, transparent 40%);
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+/* Patrón de hexágonos militares */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at center, rgba(240, 230, 140, 0.02) 0%, transparent 50%),
+        repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(54, 69, 79, 0.03) 29px, rgba(54, 69, 79, 0.03) 30px);
+    background-size: 30px 30px;
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+/* Control de música */
+.music-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.music-btn {
+    background: linear-gradient(135deg, var(--army-green), var(--gunmetal));
+    color: var(--khaki);
+    border: 2px solid var(--bronze);
+    border-radius: 25px;
+    padding: 12px 25px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.music-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(240, 230, 140, 0.2), transparent);
+    transition: left 0.6s;
+}
+
+.music-btn:hover::before {
+    left: 100%;
+}
+
+.music-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 20px rgba(205, 127, 50, 0.4),
+        inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    border-color: var(--khaki);
+}
+
+/* Header - Diseño de insignia militar */
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px 30px;
+    background: linear-gradient(145deg, 
+        rgba(44, 53, 57, 0.9) 0%,
+        rgba(54, 69, 79, 0.85) 50%,
+        rgba(44, 53, 57, 0.9) 100%);
+    border-radius: 20px;
+    border: 3px solid;
+    border-image: linear-gradient(45deg, var(--bronze), var(--olive-drab), var(--steel-blue)) 1;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 0 30px rgba(70, 130, 180, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de borde brillante */
+.header::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        var(--bronze),
+        var(--olive-drab),
+        var(--steel-blue),
+        var(--olive-drab),
+        var(--bronze));
+    border-radius: 22px;
+    z-index: -1;
+    opacity: 0.4;
+    filter: blur(5px);
+}
+
+.military-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 35px;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle at 30% 30%, 
+        rgba(70, 130, 180, 0.3), 
+        rgba(44, 53, 57, 0.8));
+    border-radius: 25px;
+    padding: 20px;
+    border: 4px solid;
+    border-image: linear-gradient(135deg, var(--bronze), var(--khaki)) 1;
+    box-shadow: 
+        0 0 30px rgba(205, 127, 50, 0.3),
+        inset 0 0 30px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.logo-container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        transparent 30%, 
+        rgba(240, 230, 140, 0.1) 50%, 
+        transparent 70%);
+    animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.regiment-logo {
+    max-width: 100%;
+    max-height: 100%;
+    filter: 
+        drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5))
+        sepia(0.3)
+        brightness(1.1);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo-container:hover .regiment-logo {
+    transform: scale(1.08) rotateY(10deg);
+}
+
+.badge-info {
+    text-align: center;
+    position: relative;
+}
+
+.badge-info h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    color: var(--khaki);
+    margin-bottom: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.7),
+        0 0 20px rgba(107, 142, 35, 0.3);
+    position: relative;
+    display: inline-block;
+}
+
+.badge-info h3::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(to right, 
+        transparent, 
+        var(--bronze), 
+        var(--olive-drab), 
+        var(--bronze), 
+        transparent);
+}
+
+.badge-info p {
+    font-size: 18px;
+    color: var(--desert-tan);
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.regiment-code {
+    font-size: 14px;
+    color: var(--steel-blue);
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(135deg, 
+        rgba(44, 53, 57, 0.7), 
+        rgba(54, 69, 79, 0.7));
+    padding: 8px 20px;
+    border-radius: 15px;
+    display: inline-block;
+    margin-top: 15px;
+    border: 1px solid var(--steel-blue);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.header-title {
+    position: relative;
+    padding-top: 25px;
+}
+
+.header-title h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5rem;
+    color: transparent;
+    background: linear-gradient(45deg, 
+        var(--khaki) 0%,
+        var(--desert-tan) 25%,
+        var(--bronze) 50%,
+        var(--desert-tan) 75%,
+        var(--khaki) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+    text-shadow: 
+        0 0 30px rgba(205, 127, 50, 0.3),
+        3px 3px 6px rgba(0, 0, 0, 0.5);
+    position: relative;
+    animation: titleGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% {
+        text-shadow: 
+            0 0 20px rgba(205, 127, 50, 0.2),
+            3px 3px 6px rgba(0, 0, 0, 0.5);
+    }
+    100% {
+        text-shadow: 
+            0 0 40px rgba(205, 127, 50, 0.6),
+            0 0 60px rgba(107, 142, 35, 0.3),
+            3px 3px 6px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.divider {
+    height: 4px;
+    width: 400px;
+    margin: 0 auto 20px;
+    background: linear-gradient(to right, 
+        transparent 10%, 
+        var(--bronze) 25%, 
+        var(--olive-drab) 50%, 
+        var(--steel-blue) 75%, 
+        transparent 90%);
+    border-radius: 2px;
+    box-shadow: 0 0 15px rgba(70, 130, 180, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.divider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: dividerShine 3s infinite linear;
+}
+
+@keyframes dividerShine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.subtitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    color: var(--steel-blue);
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-shadow: 
+        1px 1px 3px rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(70, 130, 180, 0.2);
+}
+
+/* Tarjeta de invitación - Diseño de placa militar */
+.invitation-card {
+    background: linear-gradient(145deg, 
+        rgba(44, 53, 57, 0.95) 0%,
+        rgba(54, 69, 79, 0.9) 50%,
+        rgba(44, 53, 57, 0.95) 100%);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 
+        0 25px 60px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 0 0 1px rgba(205, 127, 50, 0.2);
+    border: 4px solid transparent;
+    border-image: linear-gradient(45deg, var(--bronze), var(--olive-drab)) 1;
+    margin-bottom: 50px;
+    position: relative;
+    backdrop-filter: blur(10px);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* Efecto de profundidad */
+.invitation-card::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: linear-gradient(145deg, 
+        rgba(0, 0, 0, 0.2), 
+        transparent 30%);
+    border-radius: 20px;
+    z-index: -1;
+    filter: blur(10px);
+    opacity: 0.7;
+}
+
+.card-header {
+    background: linear-gradient(90deg, 
+        rgba(54, 69, 79, 0.8) 0%,
+        rgba(107, 142, 35, 0.6) 50%,
+        rgba(54, 69, 79, 0.8) 100%);
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    border-bottom: 3px solid var(--bronze);
+    overflow: hidden;
+}
+
+.card-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        transparent 30%, 
+        rgba(240, 230, 140, 0.05) 50%, 
+        transparent 70%);
+    animation: headerShine 6s infinite linear;
+}
+
+@keyframes headerShine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.military-stripes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.stripe {
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(90deg, 
+        var(--bronze), 
+        var(--olive-drab), 
+        var(--steel-blue));
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.stripe::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: stripeShine 2s infinite linear;
+}
+
+@keyframes stripeShine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.motto {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.9rem;
+    font-style: italic;
+    color: var(--khaki);
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.7),
+        0 0 15px rgba(205, 127, 50, 0.3);
+    letter-spacing: 1.8px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.card-body {
+    padding: 50px 40px;
+}
+
+/* Sección del homenajeado - Insignia de honor */
+.honoree-section {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 40px;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(to right, transparent, var(--bronze), var(--steel-blue), var(--bronze), transparent) 1;
+    position: relative;
+}
+
+.rank-badge {
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    position: relative;
+}
+
+.rank-badge::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, 
+        rgba(205, 127, 50, 0.1), 
+        transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.rank-badge i {
+    font-size: 3.2rem;
+    color: var(--khaki);
+    text-shadow: 
+        0 0 20px rgba(205, 127, 50, 0.5),
+        2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.rank-badge i::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, 
+        rgba(240, 230, 140, 0.2), 
+        transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.rank-badge i:hover {
+    transform: scale(1.2) rotate(15deg);
+    color: var(--bronze);
+    text-shadow: 
+        0 0 30px rgba(240, 230, 140, 0.8),
+        0 0 40px rgba(205, 127, 50, 0.6);
+}
+
+.honoree-section h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.2rem;
+    color: transparent;
+    background: linear-gradient(45deg, 
+        var(--khaki), 
+        var(--desert-tan), 
+        var(--khaki));
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin: 25px 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 
+        3px 3px 6px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(107, 142, 35, 0.2);
+    position: relative;
+    display: inline-block;
+}
+
+.honoree-section h2::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 2px;
+    background: linear-gradient(to right, 
+        transparent, 
+        var(--bronze), 
+        var(--olive-drab), 
+        var(--bronze), 
+        transparent);
+}
+
+.honoree-detail {
+    font-size: 1.4rem;
+    color: var(--steel-blue);
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin-top: 25px;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, 
+        rgba(54, 69, 79, 0.4), 
+        rgba(44, 53, 57, 0.4));
+    border-radius: 15px;
+    border: 2px solid rgba(70, 130, 180, 0.3);
+    display: inline-block;
+}
+
+/* Sección de anfitriones - Placa de identificación */
+.hosts-section {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px;
+    background: linear-gradient(135deg, 
+        rgba(44, 53, 57, 0.7) 0%,
+        rgba(54, 69, 79, 0.6) 100%);
+    border-radius: 20px;
+    border: 3px solid;
+    border-image: linear-gradient(45deg, var(--bronze), var(--steel-blue)) 1;
+    box-shadow: 
+        inset 0 0 30px rgba(0, 0, 0, 0.3),
+        0 10px 30px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.hosts-section::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        var(--bronze),
+        var(--olive-drab),
+        var(--steel-blue));
+    border-radius: 22px;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.hosts-section p {
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    color: var(--desert-tan);
+    line-height: 1.8;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hosts {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin: 35px 0;
+    flex-wrap: wrap;
+}
+
+.host {
+    position: relative;
+}
+
+.host h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.9rem;
+    color: var(--khaki);
+    padding: 20px 40px;
+    background: linear-gradient(135deg, 
+        rgba(54, 69, 79, 0.9), 
+        rgba(44, 53, 57, 0.9));
+    border-radius: 15px;
+    border: 3px solid var(--bronze);
+    box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.4),
+        inset 0 0 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.host h3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(240, 230, 140, 0.1), 
+        transparent);
+    transition: left 0.6s;
+}
+
+.host:hover h3::before {
+    left: 100%;
+}
+
+.host:hover h3 {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 15px 35px rgba(205, 127, 50, 0.4),
+        inset 0 0 30px rgba(0, 0, 0, 0.4);
+    border-color: var(--khaki);
+}
+
+.host h3::after,
+.host h3::before {
+    content: "✧";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--steel-blue);
+    font-size: 1.4rem;
+    opacity: 0.7;
+}
+
+.host h3::before { left: 15px; }
+.host h3::after { right: 15px; }
+
+/* Detalles del evento - Tarjetas tácticas */
+.event-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 30px;
+    background: linear-gradient(145deg, 
+        rgba(44, 53, 57, 0.8) 0%,
+        rgba(54, 69, 79, 0.7) 100%);
+    border-radius: 20px;
+    border: 3px solid transparent;
+    border-image: linear-gradient(45deg, var(--olive-drab), var(--steel-blue)) 1;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.3),
+        inset 0 0 0 1px rgba(240, 230, 140, 0.1);
+}
+
+.detail-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, 
+        var(--bronze), 
+        var(--olive-drab), 
+        var(--steel-blue));
+}
+
+.detail-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(70, 130, 180, 0.2),
+        inset 0 0 0 1px rgba(240, 230, 140, 0.2);
+    border-image: linear-gradient(45deg, var(--khaki), var(--bronze)) 1;
+}
+
+.detail-icon {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    background: linear-gradient(135deg, var(--olive-drab), var(--steel-blue));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--bronze);
+    box-shadow: 
+        0 0 25px rgba(205, 127, 50, 0.4),
+        inset 0 0 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.detail-icon::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, 
+        rgba(240, 230, 140, 0.3), 
+        transparent 70%);
+}
+
+.detail-icon i {
+    font-size: 2.5rem;
+    color: var(--khaki);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.detail-item h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.7rem;
+    color: var(--khaki);
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.detail-item p {
+    color: var(--desert-tan);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Botones - Controles tácticos */
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin: 60px 0;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 20px 40px;
+    border: none;
+    border-radius: 15px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    min-width: 280px;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent);
+    transition: left 0.7s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, 
+        var(--olive-drab) 0%,
+        var(--steel-blue) 100%);
+    color: var(--khaki);
+    border: 3px solid var(--bronze);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        0 0 20px rgba(70, 130, 180, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, 
+        var(--steel-blue) 0%,
+        var(--olive-drab) 100%);
+    transform: translateY(-8px) scale(1.05) rotateX(10deg);
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.6),
+        0 0 40px rgba(107, 142, 35, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border-color: var(--khaki);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, 
+        rgba(54, 69, 79, 0.9) 0%,
+        rgba(44, 53, 57, 0.9) 100%);
+    color: var(--desert-tan);
+    border: 3px solid var(--olive-drab);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 0 20px rgba(107, 142, 35, 0.2);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, 
+        rgba(44, 53, 57, 0.9) 0%,
+        rgba(54, 69, 79, 0.9) 100%);
+    transform: translateY(-8px) scale(1.05) rotateX(10deg);
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(205, 127, 50, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: var(--bronze);
+    color: var(--khaki);
+}
+
+/* Mapa - Terminal de operaciones */
+.location-map {
+    display: none;
+    margin-top: 60px;
+    padding: 40px;
+    background: linear-gradient(145deg, 
+        rgba(44, 53, 57, 0.95) 0%,
+        rgba(54, 69, 79, 0.9) 100%);
+    border-radius: 25px;
+    border: 4px solid;
+    border-image: linear-gradient(45deg, var(--steel-blue), var(--bronze)) 1;
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        inset 0 0 0 1px rgba(240, 230, 140, 0.1),
+        0 0 40px rgba(70, 130, 180, 0.2);
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: hidden;
+}
+
+.map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(to right, var(--bronze), var(--steel-blue), var(--bronze)) 1;
+}
+
+.map-header h3 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--khaki);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.7),
+        0 0 15px rgba(70, 130, 180, 0.3);
+}
+
+.close-btn {
+    background: linear-gradient(135deg, 
+        rgba(54, 69, 79, 0.8), 
+        rgba(44, 53, 57, 0.8));
+    border: 3px solid var(--bronze);
+    color: var(--khaki);
+    font-size: 2.8rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: all 0.3s ease;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 
+        0 5px 15px rgba(0, 0, 0, 0.3),
+        inset 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn:hover {
+    color: var(--steel-blue);
+    background: linear-gradient(135deg, 
+        rgba(70, 130, 180, 0.3), 
+        rgba(44, 53, 57, 0.8));
+    border-color: var(--steel-blue);
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 
+        0 8px 25px rgba(70, 130, 180, 0.4),
+        inset 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.map-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.4),
+        inset 0 0 0 2px rgba(205, 127, 50, 0.2);
+    position: relative;
+}
+
+.map-placeholder {
+    padding: 50px;
+    background: linear-gradient(145deg, 
+        rgba(44, 53, 57, 0.9) 0%,
+        rgba(54, 69, 79, 0.8) 100%);
+    border-radius: 15px;
+    text-align: center;
+    border: 3px solid var(--bronze);
+    position: relative;
+    overflow: hidden;
+}
+
+.map-placeholder::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(0deg, 
+            transparent, 
+            transparent 29px, 
+            rgba(70, 130, 180, 0.05) 29px, 
+            rgba(70, 130, 180, 0.05) 30px),
+        repeating-linear-gradient(90deg, 
+            transparent, 
+            transparent 29px, 
+            rgba(107, 142, 35, 0.05) 29px, 
+            rgba(107, 142, 35, 0.05) 30px);
+    pointer-events: none;
+}
+
+.map-icon {
+    font-size: 5rem;
+    color: var(--steel-blue);
+    margin-bottom: 25px;
+    animation: radarPulse 2s infinite ease-in-out;
+    position: relative;
+}
+
+@keyframes radarPulse {
+    0%, 100% { 
+        transform: scale(1); 
+        opacity: 0.8;
+    }
+    50% { 
+        transform: scale(1.1); 
+        opacity: 1;
+    }
+}
+
+.map-logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 25px;
+    background: linear-gradient(135deg, var(--olive-drab), var(--steel-blue));
+    border-radius: 20px;
+    padding: 15px;
+    border: 4px solid var(--bronze);
+    box-shadow: 
+        0 0 30px rgba(205, 127, 50, 0.4),
+        inset 0 0 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.map-logo::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, 
+        rgba(240, 230, 140, 0.2), 
+        transparent 70%);
+}
+
+.map-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    filter: 
+        drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5))
+        brightness(1.1)
+        contrast(1.1);
+}
+
+.map-placeholder h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    color: var(--khaki);
+    margin-bottom: 20px;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.7),
+        0 0 15px rgba(107, 142, 35, 0.2);
+}
+
+.map-placeholder p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--desert-tan);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.coordinates {
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(135deg, 
+        rgba(54, 69, 79, 0.6), 
+        rgba(44, 53, 57, 0.6));
+    padding: 15px 25px;
+    border-radius: 10px;
+    margin: 25px 0;
+    color: var(--steel-blue);
+    border: 2px solid var(--olive-drab);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.map-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 35px 0;
+    flex-wrap: wrap;
+}
+
+.map-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 35px;
+    background: linear-gradient(135deg, 
+        var(--olive-drab) 0%,
+        var(--steel-blue) 100%);
+    color: var(--khaki);
+    text-decoration: none;
+    border-radius: 12px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.map-link-btn:hover {
+    background: linear-gradient(135deg, 
+        var(--steel-blue) 0%,
+        var(--olive-drab) 100%);
+    transform: translateY(-5px) scale(1.05);
+    border-color: var(--bronze);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(70, 130, 180, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.map-instructions {
+    margin-top: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, 
+        rgba(54, 69, 79, 0.5), 
+        rgba(44, 53, 57, 0.5));
+    border-radius: 15px;
+    border-left: 5px solid var(--bronze);
+    text-align: left;
+    border-right: 1px solid rgba(240, 230, 140, 0.1);
+}
+
+.map-instructions p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--desert-tan);
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.map-instructions i {
+    color: var(--steel-blue);
+    width: 28px;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+/* Card footer - Base de operaciones */
+.card-footer {
+    background: linear-gradient(90deg, 
+        rgba(54, 69, 79, 0.9) 0%,
+        rgba(107, 142, 35, 0.7) 25%,
+        rgba(70, 130, 180, 0.7) 50%,
+        rgba(107, 142, 35, 0.7) 75%,
+        rgba(54, 69, 79, 0.9) 100%);
+    padding: 50px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-top: 4px solid var(--bronze);
+}
+
+.card-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(45deg, 
+            transparent, 
+            transparent 10px, 
+            rgba(240, 230, 140, 0.05) 10px, 
+            rgba(240, 230, 140, 0.05) 20px);
+    pointer-events: none;
+}
+
+.footer-logo {
+    margin-bottom: 30px;
+}
+
+.small-logo {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--olive-drab), var(--steel-blue));
+    border-radius: 20px;
+    padding: 15px;
+    border: 4px solid var(--bronze);
+    box-shadow: 
+        0 0 35px rgba(205, 127, 50, 0.5),
+        inset 0 0 35px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.small-logo::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, 
+        rgba(240, 230, 140, 0.3), 
+        transparent 70%);
+}
+
+.card-footer p {
+    font-size: 1.8rem;
+    margin: 30px 0;
+    color: var(--khaki);
+    font-weight: 800;
+    text-shadow: 
+        2px 2px 5px rgba(0, 0, 0, 0.7),
+        0 0 25px rgba(205, 127, 50, 0.4);
+    letter-spacing: 3px;
+    position: relative;
+    z-index: 1;
+}
+
+.military-emblems {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.emblem {
+    font-size: 3.2rem;
+    color: var(--khaki);
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, 
+        rgba(54, 69, 79, 0.9), 
+        rgba(44, 53, 57, 0.9));
+    border-radius: 50%;
+    border: 4px solid var(--bronze);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        inset 0 0 40px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(205, 127, 50, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.emblem::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, 
+        rgba(240, 230, 140, 0.2), 
+        transparent 70%);
+}
+
+.emblem:hover {
+    transform: rotate(20deg) scale(1.15);
+    border-color: var(--steel-blue);
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.6),
+        inset 0 0 50px rgba(0, 0, 0, 0.5),
+        0 0 35px rgba(70, 130, 180, 0.5);
+    color: var(--steel-blue);
+}
+
+/* Footer - Base militar */
+.footer {
+    padding: 40px 35px;
+    background: linear-gradient(135deg, 
+        rgba(44, 53, 57, 0.95) 0%,
+        rgba(54, 69, 79, 0.9) 100%);
+    border-radius: 20px;
+    border-top: 4px solid var(--olive-drab);
+    margin-top: 30px;
+    backdrop-filter: blur(15px);
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-logo-section {
+    flex-shrink: 0;
+}
+
+.footer-logo {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, var(--olive-drab), var(--steel-blue));
+    border-radius: 20px;
+    padding: 20px;
+    border: 4px solid var(--bronze);
+    box-shadow: 
+        0 0 35px rgba(205, 127, 50, 0.4),
+        inset 0 0 35px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-logo::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, 
+        rgba(240, 230, 140, 0.2), 
+        transparent 70%);
+}
+
+.footer-text {
+    text-align: center;
+    flex: 1;
+    min-width: 350px;
+}
+
+.footer-text p {
+    color: var(--desert-tan);
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.footer-text p:first-child {
+    font-weight: 700;
+    color: var(--khaki);
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+}
+
+/* Notificación - Alerta militar */
+.notification {
+    position: fixed;
+    top: 90px;
+    right: 25px;
+    background: linear-gradient(135deg, 
+        rgba(54, 69, 79, 0.95), 
+        rgba(44, 53, 57, 0.95));
+    color: var(--khaki);
+    padding: 22px 35px;
+    border-radius: 15px;
+    box-shadow: 
+        0 10px 35px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(70, 130, 180, 0.3),
+        inset 0 0 0 2px rgba(205, 127, 50, 0.3);
+    border: 3px solid;
+    border-image: linear-gradient(45deg, var(--bronze), var(--steel-blue)) 1;
+    display: none;
+    z-index: 1000;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    max-width: 400px;
+    animation: notificationSlide 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(15px);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+@keyframes notificationSlide {
+    from {
+        transform: translateX(100%) translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes notificationHide {
+    from {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%) translateY(-20px);
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .header-title h1 {
+        font-size: 3rem;
+    }
+    
+    .honoree-section h2 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header-title h1 {
+        font-size: 2.6rem;
+    }
+    
+    .honoree-section h2 {
+        font-size: 2.3rem;
+    }
+    
+    .detail-item h3 {
+        font-size: 1.5rem;
+    }
+    
+    .btn {
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-title h1 {
+        font-size: 2.2rem;
+        letter-spacing: 3px;
+    }
+    
+    .honoree-section h2 {
+        font-size: 2rem;
+    }
+    
+    .event-details {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .btn {
+        min-width: 100%;
+        padding: 18px 30px;
+    }
+    
+    .hosts {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .host h3 {
+        font-size: 1.6rem;
+        padding: 18px 30px;
+    }
+    
+    .logo-container {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .music-controls {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .music-btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+    
+    .map-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .map-link-btn {
+        width: 100%;
+        max-width: 350px;
+        justify-content: center;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .footer-text {
+        min-width: 100%;
+    }
+    
+    .military-emblems {
+        gap: 30px;
+    }
+    
+    .emblem {
+        width: 80px;
+        height: 80px;
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .card-body, .card-header, .card-footer {
+        padding: 30px 20px;
+    }
+    
+    .header {
+        padding: 30px 20px;
+    }
+    
+    .header-title h1 {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+    }
+    
+    .motto {
+        font-size: 1.4rem;
+    }
+    
+    .honoree-section h2 {
+        font-size: 1.7rem;
+    }
+    
+    .honoree-detail {
+        font-size: 1.1rem;
+        padding: 12px 20px;
+    }
+    
+    .detail-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+    }
+    
+    .detail-icon {
+        margin-bottom: 20px;
+    }
+    
+    .detail-item h3 {
+        font-size: 1.3rem;
+    }
+    
+    .map-placeholder {
+        padding: 30px 20px;
+    }
+    
+    .map-icon {
+        font-size: 4rem;
+    }
+    
+    .footer-logo {
+        width: 100px;
+        height: 100px;
+        padding: 15px;
+    }
+    
+    .small-logo {
+        width: 80px;
+        height: 80px;
+        padding: 12px;
+    }
+    
+    .notification {
+        right: 15px;
+        left: 15px;
+        max-width: none;
+        text-align: center;
+    }
+}
+
+/* Animaciones de entrada */
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.invitation-card {
+    animation: cardEntrance 1s ease-out;
+}
+
+.detail-item:nth-child(1) { animation-delay: 0.1s; }
+.detail-item:nth-child(2) { animation-delay: 0.2s; }
+.detail-item:nth-child(3) { animation-delay: 0.3s; }

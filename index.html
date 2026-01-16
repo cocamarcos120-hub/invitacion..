@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Licenciamiento - SLDO. David Felipe Quispe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Control de música -->
+    <div class="music-controls">
+        <button id="musicToggle" class="music-btn">
+            <i class="fas fa-music"></i>
+            <span id="musicStatus">Música: OFF</span>
+        </button>
+        <audio id="backgroundMusic" loop preload="auto">
+            <source src="assets/audio/himno-militar.mp3" type="audio/mpeg">
+            <source src="assets/audio/himno-militar.ogg" type="audio/ogg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </div>
+
+    <div class="container">
+        <!-- Encabezado con logo -->
+        <header class="header">
+            <div class="military-badge">
+                <div class="logo-container">
+                    <img src="assets/images/logo-satinador.png" alt="Logo Satinador" class="regiment-logo">
+                </div>
+                <div class="badge-info">
+                    <h3>REGIMIENTO GERMÁN BUSCH</h3>
+                    <p>SATINADOR CHALLAPATA</p>
+                    <p class="regiment-code">Código: RGB-2026-01</p>
+                </div>
+            </div>
+            
+            <div class="header-title">
+                <h1>LICENCIAMIENTO DE CUARTEL</h1>
+                <div class="divider"></div>
+                <p class="subtitle">Honor, Valor y Patriotismo</p>
+            </div>
+        </header>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <div class="invitation-card">
+                <div class="card-header">
+                    <p class="motto">"El servicio militar dura un año, el orgullo de haber sido soldado toda una vida."</p>
+                    <div class="military-stripes">
+                        <div class="stripe"></div>
+                        <div class="stripe"></div>
+                        <div class="stripe"></div>
+                    </div>
+                </div>
+                
+                <div class="card-body">
+                    <div class="honoree-section">
+                        <div class="rank-badge">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h2>SLDO. DAVID FELIPE QUISPE</h2>
+                        <p class="honoree-detail">ORURO - Enero 2026 | Regimiento Germán Busch</p>
+                    </div>
+                    
+                    <div class="hosts-section">
+                        <p>Con gran honor y orgullo</p>
+                        <div class="hosts">
+                            <div class="host">
+                                <h3>Viviano Felipe Alavi</h3>
+                            </div>
+                            <div class="host">
+                                <h3>Vicenta Quispe Real</h3>
+                            </div>
+                        </div>
+                        <p>tienen el agrado de invitarle(s) a festejar la Buena llegada del Cuartel de su querido hijo</p>
+                    </div>
+                    
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div>
+                                <h3>SÁBADO 17 DE ENERO 2026</h3>
+                                <p>Fecha del evento</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3>18:00 HORAS</h3>
+                                <p>Hora de inicio</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3>REGI. GERMÁN BUSCH</h3>
+                                <p>SATINADOR CHALLAPATA</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="actions">
+                        <button id="locationBtn" class="btn btn-primary">
+                            <i class="fas fa-map-marked-alt"></i> Ver Ubicación
+                        </button>
+                        <button id="shareBtn" class="btn btn-secondary">
+                            <i class="fas fa-share-alt"></i> Compartir Invitación
+                        </button>
+                    </div>
+                    
+                    <!-- Mapa con ubicación -->
+                    <div id="locationMap" class="location-map">
+                        <div class="map-header">
+                            <h3><i class="fas fa-map-pin"></i> Ubicación del Cuartel</h3>
+                            <button id="closeMapBtn" class="close-btn">&times;</button>
+                        </div>
+                        <div class="map-container">
+                            <div class="map-placeholder">
+                                <div class="map-icon">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                </div>
+                                <div class="map-logo">
+                                    <img src="assets/images/logo-satinador.png" alt="Logo Regimiento">
+                                </div>
+                                <h4>Regimiento Germán Busch</h4>
+                                <p>Satinador Challapata, Oruro, Bolivia</p>
+                                <p class="coordinates">Coordenadas: 18°28'15"S 66°16'30"W</p>
+                                
+                                <div class="map-links">
+                                    <a href="https://maps.app.goo.gl/JukfmxN39ioMQ8Rg8?g_st=aw" target="_blank" class="map-link-btn">
+                                        <i class="fas fa-external-link-alt"></i> Abrir en Google Maps
+                                    </a>
+                                    <a href="https://www.google.com/maps?q=-18.470833,-66.275000" target="_blank" class="map-link-btn">
+                                        <i class="fas fa-directions"></i> Cómo llegar
+                                    </a>
+                                </div>
+                                
+                                <div class="map-instructions">
+                                    <p><i class="fas fa-info-circle"></i> El acto se realizará en las instalaciones de la Flia. Felipe</p>
+                          
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-footer">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo-satinador.png" alt="Logo Regimiento" class="small-logo">
+                    </div>
+                    <p>¡Su presencia honrará esta celebración!</p>
+                    <div class="military-emblems">
+                        <div class="emblem"><i class="fas fa-flag"></i></div>
+                        <div class="emblem"><i class="fas fa-medal"></i></div>
+                        <div class="emblem"><i class="fas fa-shield-alt"></i></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo-section">
+                    <img src="assets/images/logo-satinador.png" alt="Logo Satinador" class="footer-logo">
+                </div>
+                <div class="footer-text">
+                    <p>Invitación digital oficial - Regimiento Germán Busch Satinador Challapata</p>
+                    <p>© Enero 2026 - "Honor, Deber, Patria"</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Notificación flotante -->
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
